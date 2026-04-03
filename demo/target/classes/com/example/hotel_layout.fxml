@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.HotelController">
+    
+    <HBox alignment="CENTER" style="-fx-background-color: #1a2a3a; -fx-padding: 25;">
+        <Label text="🏨 HOTEL MANAGEMENT SYSTEM" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;" />
+    </HBox>
+
+    <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="Add Room">
+                <content>
+                    <VBox spacing="20" style="-fx-padding: 30;">
+                        <Label text="ROOM REGISTRY" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                        
+                        <GridPane hgap="15" vgap="12">
+                            <Label text="Room Number:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <TextField fx:id="roomNumField" promptText="e.g. 101" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            
+                            <Label text="Room Type:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <ComboBox fx:id="typeComboBox" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            
+                            <Label text="Price per Night:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            
+                            <Button text="Add to Inventory" onAction="#handleAddRoom" 
+                                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" 
+                                    GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        </GridPane>
+                    </VBox>
+                </content>
+            </Tab>
+            <Tab text="Rooms" />
+            <Tab text="Bookings" />
+            <Tab text="Front Desk" />
+        </tabs>
+    </TabPane>
+
+    <HBox alignment="CENTER" style="-fx-background-color: #1a2a3a; -fx-padding: 12;">
+        <Label text="Ronan Madan | OSDL Lab Project" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #bdc3c7;" />
+    </HBox>
+
+</VBox>
